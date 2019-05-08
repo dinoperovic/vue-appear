@@ -1,4 +1,4 @@
-# Vue Appear 🙈
+# Vue Appear
 
 [![Version](https://img.shields.io/npm/v/vue-appear.svg)](https://www.npmjs.com/package/vue-appear)
 [![License](https://img.shields.io/npm/l/vue-appear.svg)](https://www.npmjs.com/package/vue-appear)
