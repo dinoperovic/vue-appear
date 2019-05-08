@@ -103,4 +103,4 @@ To make elements appear in your templates:
 To see changes view the [Changelog] file.
 
 [Vue]: https://vuejs.org/
-[Changelog]: https://github.com/dinoperovic/vue-appear/CHANGELOG.md
+[Changelog]: https://github.com/dinoperovic/vue-appear/blob/master/CHANGELOG.md
