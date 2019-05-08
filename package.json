@@ -1,0 +1,42 @@
+{
+  "name": "vue-appear",
+  "version": "0.1.0",
+  "description": "Vue directive that helps you appear stuff as they come into view.",
+  "main": "dist/vue-appear.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dinoperovic/vue-appear.git"
+  },
+  "keywords": [
+    "appear",
+    "reveal",
+    "scroll",
+    "vue",
+    "magic"
+  ],
+  "author": "Dino Perovic <dino.perovic@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dinoperovic/vue-appear/issues"
+  },
+  "homepage": "https://github.com/dinoperovic/vue-appear#readme",
+  "dependencies": {
+    "scrollmagic": "^2.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.5",
+    "jest": "^24.8.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
