@@ -72,14 +72,14 @@ const VueAppear = {
     }
   },
   inserted(el, binding, vnode) {
-    let enable = { enable: true, ...(binding.value || {}) }.enabled
+    let enable = { enabled: true, ...(binding.value || {}) }.enabled
     let config = vnode.appear.getConfig(binding)
     if (enable) vnode.appear.setup(el, config)
   },
   update(el, binding, vnode, oldVnode) {
     vnode.appear = oldVnode.appear
-    let enabled = { enable: true, ...(binding.oldValue || {}) }.enabled
-    let enable = { enable: true, ...(binding.value || {}) }.enabled
+    let enabled = { enabled: true, ...(binding.oldValue || {}) }.enabled
+    let enable = { enabled: true, ...(binding.value || {}) }.enabled
     let config = vnode.appear.getConfig(binding)
     // Setup or destroy based on `enabled` value.
     if (!enabled && enable) vnode.appear.setup(el, config)
