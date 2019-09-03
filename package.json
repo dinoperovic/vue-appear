@@ -1,6 +1,6 @@
 {
   "name": "vue-appear",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue directive that helps you appear stuff as they come into view.",
   "main": "src/index.js",
   "scripts": {
