@@ -16,11 +16,12 @@ const VueAppear = {
     vnode.appear = {
       controller: null,
       getConfig(binding) {
-        let config = {
-          ...VueAppear.options,
-          ...binding.modifiers,
-          ...(typeof binding.value === 'object' ? binding.value : {})
-        }
+        const config = Object.assign(
+          {},
+          VueAppear.options,
+          binding.modifiers,
+          (typeof binding.value === 'object' ? binding.value : {})
+        )
         return config
       },
       getElements(el, config) {
@@ -57,12 +58,12 @@ const VueAppear = {
         }
 
         setTimeout(() => {
-          let elements = [...this.getElements(el, config)]
+          let elements = Array.from(this.getElements(el, config)).slice()
           elements.forEach(hook)
         }, config.delay)
       },
       destroy(el, config) {
-        let elements = [...this.getElements(el, config)]
+        let elements = Array.from(this.getElements(el, config)).slice()
         elements.forEach(el => {
           el.classList.remove(config.class)
         })
@@ -72,14 +73,16 @@ const VueAppear = {
     }
   },
   inserted(el, binding, vnode) {
-    let enable = { enabled: true, ...(binding.value || {}) }.enabled
+    let enable = Object.assign({}, { enabled: true }, (binding.value || {})).enabled
+
     let config = vnode.appear.getConfig(binding)
     if (enable) vnode.appear.setup(el, config)
   },
   update(el, binding, vnode, oldVnode) {
     vnode.appear = oldVnode.appear
-    let enabled = { enabled: true, ...(binding.oldValue || {}) }.enabled
-    let enable = { enabled: true, ...(binding.value || {}) }.enabled
+    let enabled = Object.assign({}, { enabled: true}, (binding.oldValue || {})).enabled
+    let enable = Object.assign({}, { enabled: true }, (binding.value || {})).enabled
+
     let config = vnode.appear.getConfig(binding)
     // Setup or destroy based on `enabled` value.
     if (!enabled && enable) vnode.appear.setup(el, config)

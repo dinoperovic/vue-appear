@@ -3,7 +3,7 @@ import VueAppear from './vue-appear.js'
 const install = (Vue, options) => {
   if (install.installed) return
   install.installed = true
-  if (options) VueAppear.options = { ...VueAppear.options, ...options }
+  if (options) VueAppear.options = Object.assign({}, VueAppear.options, options)
   Vue.directive('appear', VueAppear)
 }
 
